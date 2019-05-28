@@ -42,20 +42,20 @@
   <objects name="objects">
     <object>objects\obj_boat</object>
     <object>objects\obj_controle</object>
-    <object>objects\obj_island_left</object>
-    <object>objects\obj_island_right</object>
-    <object>objects\obj_man_falling</object>
     <object>objects\obj_fumaca_left</object>
     <object>objects\obj_fumaca_right</object>
-    <object>objects\obj_shark</object>
-    <object>objects\obj_points</object>
+    <object>objects\obj_game</object>
+    <object>objects\obj_island_left</object>
+    <object>objects\obj_island_right</object>
     <object>objects\obj_lifesaver_left</object>
     <object>objects\obj_lifesaver_right</object>
-    <object>objects\obj_miss</object>
-    <object>objects\obj_man_sinking</object>
+    <object>objects\obj_man_falling</object>
     <object>objects\obj_man_safe_left</object>
     <object>objects\obj_man_safe_right</object>
-    <object>objects\obj_game</object>
+    <object>objects\obj_man_sinking</object>
+    <object>objects\obj_miss</object>
+    <object>objects\obj_points</object>
+    <object>objects\obj_shark</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_game</room>

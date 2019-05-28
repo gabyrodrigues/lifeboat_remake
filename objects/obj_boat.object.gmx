@@ -26,10 +26,13 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = 0;
-global.atual = 0;
+global.atual = 515;
 
-pos_max[0] = 2;
-pos_max[1] = 5;
+//pos_max[0] = 2;
+//pos_max[1] = 5;
+
+pos_max = 755;
+pos_min = 130;
 
 pos_X[0] = 150;
 pos_X[1] = 270;
@@ -89,8 +92,8 @@ obj_lifesaver_right.image_index = 0;
     a image_index do barco vai sendo trocada*/
     
     //get player input
-    key_left = keyboard_check_pressed(vk_left);
-    key_right = keyboard_check_pressed(vk_right);
+    key_left = keyboard_check(vk_left);
+    key_right = keyboard_check(vk_right);
     
     //mudança de sprite do resgatador
     if key_right{
@@ -107,16 +110,16 @@ obj_lifesaver_right.image_index = 0;
     
     //cálculo dos movimentos para se mover
     
-    if (key_right &amp;&amp; global.atual &lt; pos_max[global.game]){
-        global.atual += 1;
+    if (key_right &amp;&amp; global.atual &lt; pos_max){
+        global.atual += 2;
     }
     
-    if (key_left &amp;&amp; global.atual &gt; 0){
-        global.atual -= 1;
+    if (key_left &amp;&amp; global.atual &gt; pos_min){
+        global.atual -= 2;
     }
     
-    x = pos_X[global.atual];
-
+    x = global.atual;
+    
 }
 
 </string>

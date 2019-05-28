@@ -117,7 +117,6 @@ alarm[0] = -1;
           <argument>
             <kind>1</kind>
             <string>///spawner man_falling
-
 if global.pause == false{
     if spawn == "on"{
         var man_count = instance_number(obj_man_falling);
@@ -126,7 +125,6 @@ if global.pause == false{
             if man_count &gt; man_limit{
                 exit;
             }
-            
             instance_create(0, 0, obj_man_falling);
             spawn = "off";
             alarm[0] = room_speed * 1.5;
