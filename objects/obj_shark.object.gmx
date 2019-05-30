@@ -38,7 +38,11 @@ pos_X[3] = 509;
 pos_X[4] = 617;
 pos_X[5] = 738;
 
+velocidade = 1;
+
 pos_Y = 315;
+
+voltar = true;
 
 x = pos_min;
 
@@ -92,16 +96,27 @@ alarm[0] = -1;
             <kind>1</kind>
             <string>if !global.game_over {
 
-    if (pos_min &lt; pos_max){
-        pos_min += 0.5;
+    if (x &gt;= pos_max){
+        x = 115;
     }
     
-    x = pos_min;
+    x += velocidade;
     
     if global.pause == true{ 
+    
         if (alarm[0] == -1){
+            
             audio_play_sound(snd_move3, 0, false);
             alarm[0] = room_speed;
+        }
+        if(voltar){
+            x = 115;
+            voltar = false;
+        }
+        
+        if(x &gt;= pos_max){
+            alarm[0] = 0;
+            voltar = true;
         }
     }
     

@@ -143,9 +143,9 @@ alarm[0] = -1;
             }
         
             //nadando depois que não é resgatado
-            instance_create(0, 0, obj_man_sinking);
-            obj_man_sinking.x = obj_man_sinking.x + 0.5;
-            obj_man_sinking.y = 338;
+            instance_create(x, 338, obj_man_sinking);
+            //obj_man_sinking.x = obj_man_sinking.x + 0.05;
+            //obj_man_sinking.y = 338;
             obj_shark.x = 115;
             global.pause = true;
         }

@@ -42,6 +42,8 @@ atual_X = 0;
 
 y = pos_Y;
 
+encontra_tubarao = false;
+
 image_index = atual_X;
 
 alarm[0] = -1;
@@ -96,21 +98,25 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = x + 0.3;
-//image_index = atual_X;
- 
-if image_index &gt;= 4 {
+            <string>if image_index &gt;= 4 {
     if alarm[0] == -1{
         alarm[0] = room_speed;
         audio_play_sound(snd_miss2, 10, false);
     }
 }
 
+//quando o tubarão encontra a pessoa e começa a persseguição
 if (int64(obj_shark.x) &gt; x - 20) {
-    instance_destroy();
+    x += 0.8;
+    obj_shark.velocidade = 0.8;
 }
 
-
+//quando a pessoa chega na margem a instancia é destruída e o jogo é despausado
+if(x &gt;= 756){
+    
+    instance_destroy();
+    global.pause = false;
+}
 </string>
           </argument>
         </arguments>

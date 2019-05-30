@@ -111,11 +111,11 @@ obj_lifesaver_right.image_index = 0;
     //cálculo dos movimentos para se mover
     
     if (key_right &amp;&amp; global.atual &lt; pos_max){
-        global.atual += 2;
+        global.atual += 5;
     }
     
     if (key_left &amp;&amp; global.atual &gt; pos_min){
-        global.atual -= 2;
+        global.atual -= 5;
     }
     
     x = global.atual;
