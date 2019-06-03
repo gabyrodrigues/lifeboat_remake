@@ -36,15 +36,13 @@ pos_X[3] = 643;
 pos_X[4] = 769;
 pos_X[5] = 769;
 
-pos_Y = 315;
+pos_Y = 330;
 
 atual_X = 0;
 
 y = pos_Y;
 
-encontra_tubarao = false;
-
-image_index = atual_X;
+//image_index = atual_X;
 
 alarm[0] = -1;
 </string>
@@ -105,16 +103,16 @@ instance_destroy();
     }
 }
 
-//quando o tubarão encontra a pessoa e começa a persseguição
-if (int64(obj_shark.x) &gt; x - 20) {
+//quando o tubarão encontra a pessoa e começa a perseguição
+if (int64(obj_shark.x) &gt; x - 40) {
     x += 0.8;
     obj_shark.velocidade = 0.8;
 }
 
-//quando a pessoa chega na margem a instancia é destruída e o jogo é despausado
-if(x &gt;= 756){
-    
-    instance_destroy();
+//quando a pessoa chega na margem a instância é destruída e o jogo é despausado
+if(x &gt;= 756){ 
+    image_index = 5;
+    //instance_destroy();
     global.pause = false;
 }
 </string>

@@ -80,14 +80,12 @@ alarm[0] = -1;
             <kind>1</kind>
             <string>if global.pause == false{
 
-    image_speed = global.velocidade_sprite;
+    image_speed = 0.033;//global.velocidade_sprite;
     
     x = pos_X[atual_X];
     y = y + 0.5;
     
-    //y = pos_Y[image_index];
     if(y &gt;= 310){
-    //if animation_hit_frame(5){
         //colisão
         if (x &gt;= (global.atual - 30) &amp;&amp; x &lt;= (global.atual + 70) &amp;&amp; global.resgate &lt;= 3){
             
@@ -117,8 +115,6 @@ alarm[0] = -1;
                 }
             }
             
-            
-            
             global.points += global.pontos_ganhos;
             global.resgate += 1;
         }else{
@@ -144,10 +140,9 @@ alarm[0] = -1;
         
             //nadando depois que não é resgatado
             instance_create(x, 338, obj_man_sinking);
-            //obj_man_sinking.x = obj_man_sinking.x + 0.05;
-            //obj_man_sinking.y = 338;
             obj_shark.x = 115;
             global.pause = true;
+            show_debug_message(obj_man_sinking.y);
         }
         instance_destroy();
     }
