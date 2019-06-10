@@ -28,6 +28,13 @@
     <sprite>sprites\spr_man_safe_right</sprite>
     <sprite>sprites\spr_man_sinking</sprite>
     <sprite>sprites\spr_game</sprite>
+    <sprite>sprites\spr_shark_2</sprite>
+    <sprite>sprites\spr_man_falling_2</sprite>
+    <sprite>sprites\spr_boat_2</sprite>
+    <sprite>sprites\spr_miss_2</sprite>
+    <sprite>sprites\spr_man_sinking_2</sprite>
+    <sprite>sprites\spr_lifesaver_left_2</sprite>
+    <sprite>sprites\spr_lifesaver_right_2</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background</background>
