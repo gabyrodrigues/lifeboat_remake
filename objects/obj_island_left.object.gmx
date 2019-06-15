@@ -31,7 +31,7 @@ if (place_meeting(x, y, obj_boat)){
         global.resgate -= 1;
         global.points += 1;
         if(global.tem_gente == false){
-            instance_create(15, 213, obj_man_safe_left);
+            instance_create(20, 250, obj_man_safe_left);
         }
     }
 }

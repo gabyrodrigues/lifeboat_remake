@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = 0;
+            <string>image_speed = 0.033;
 global.atual = 515;
 
 //pos_max[0] = 2;
@@ -88,8 +88,28 @@ obj_lifesaver_right.image_index = 0;
           <argument>
             <kind>1</kind>
             <string>if global.pause == false{
-    image_index = global.resgate; /*de acordo com o número de passageiros
+    //image_index = global.resgate; 
+    /*de acordo com o número de passageiros
     a image_index do barco vai sendo trocada*/
+    
+    switch (global.resgate){
+        case 0:
+            sprite_index = spr_boat_2;
+            break;
+        case 1:
+            sprite_index = spr_mario_boat_1;
+            break;
+        case 2:
+            sprite_index = spr_mario_boat_2;
+            break;
+        case 3:
+            sprite_index = spr_mario_boat_3;
+            break;
+        case 4:
+            sprite_index = spr_mario_boat_4;
+            break;
+    }
+    
     
     //get player input
     key_left = keyboard_check(vk_left);
@@ -120,6 +140,8 @@ obj_lifesaver_right.image_index = 0;
     
     x = global.atual;
     
+}else{
+    image_speed = 0;
 }
 
 </string>

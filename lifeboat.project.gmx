@@ -23,7 +23,6 @@
     <sprite>sprites\spr_lifesaver_left</sprite>
     <sprite>sprites\spr_lifesaver_right</sprite>
     <sprite>sprites\spr_miss</sprite>
-    <sprite>sprites\spr_man_rescued</sprite>
     <sprite>sprites\spr_man_safe_left</sprite>
     <sprite>sprites\spr_man_safe_right</sprite>
     <sprite>sprites\spr_man_sinking</sprite>
@@ -35,6 +34,15 @@
     <sprite>sprites\spr_man_sinking_2</sprite>
     <sprite>sprites\spr_lifesaver_left_2</sprite>
     <sprite>sprites\spr_lifesaver_right_2</sprite>
+    <sprite>sprites\spr_man_falling_3</sprite>
+    <sprite>sprites\spr_power_up</sprite>
+    <sprite>sprites\spr_mario_boat_1</sprite>
+    <sprite>sprites\spr_mario_boat_2</sprite>
+    <sprite>sprites\spr_mario_boat_3</sprite>
+    <sprite>sprites\spr_mario_boat_4</sprite>
+    <sprite>sprites\spr_mario_safe_right</sprite>
+    <sprite>sprites\spr_mario_safe_left</sprite>
+    <sprite>sprites\spr_power_up_life</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background</background>
@@ -64,6 +72,8 @@
     <object>objects\obj_miss</object>
     <object>objects\obj_points</object>
     <object>objects\obj_shark</object>
+    <object>objects\obj_power_up</object>
+    <object>objects\obj_power_up_life</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_game</room>

@@ -38,6 +38,8 @@ global.pontos_ganhos = 1; //determina os pontos ganhos, começa com 1 mas caso a
 alarm[1] = -1;
 
 global.points = 0; //controla a pontuação
+
+global.pontos_bonus = 0;
 global.chances = 0; //controla as chances
 global.resgate = 0; //controla o número de passageiros dentro do barco
 
@@ -45,6 +47,7 @@ man_limit = 2; //variável que define o limite de passageiros em jogo
 
 global.velocidade_sprite = 0.025; //essa variável define a velocidade da troca de sprites
 
+spawn_spr = irandom_range(1,5);
 </string>
           </argument>
         </arguments>
@@ -125,10 +128,42 @@ if global.pause == false{
             if man_count &gt; man_limit{
                 exit;
             }
-            instance_create(0, 0, obj_man_falling);
+            
+            /*if spawn_spr &lt;=3 {
+                instance_create(0, 0, obj_man_falling);
+                obj_man_falling.sprite_index = spr_man_falling_2;
+            }else{
+                instance_create(0, 0, obj_man_falling);
+                obj_man_falling.sprite_index = spr_man_falling_3;
+            }
+            spawn = "off";
+            alarm[0] = 180;*/
+            
+            //spawn_spr = irandom_range(1,5);
+            //sprite = choose(obj_man_falling, obj_power_up);
+            //instance_create(0, 0, sprite);
+
+            //show_debug_message(spawn_spr);
+            //spawn = "off";
+            //alarm[0] = 180;
+            
+            spawn_spr = irandom_range(1,15);
+            if (global.points &gt;= 5 and spawn_spr &gt;= 14) {
+                instance_create(0, 0, obj_power_up);
+            
+            }else if (global.points &gt;= 5 and global.chances &gt;= 1 and spawn_spr == 13) {
+                instance_create(0, 0, obj_power_up_life);   
+            }
+            else {
+                instance_create(0, 0, obj_man_falling);
+            }
+            
             spawn = "off";
             alarm[0] = 180;
-
+            
+            
+            show_debug_message(spawn_spr);
+            show_debug_message(global.chances);
         }
     }
     //som
@@ -189,7 +224,7 @@ if tecla_F{
             <string>///desenha a pontuação
 draw_set_colour(c_white);
 draw_set_font(fnt_score);
-draw_text(125,40,global.points);
+draw_text(125,40,global.points + global.pontos_bonus);
 </string>
           </argument>
         </arguments>
