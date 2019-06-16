@@ -12,6 +12,14 @@
     <sound>sound\snd_move2</sound>
     <sound>sound\snd_move3</sound>
     <sound>sound\snd_move4</sound>
+    <sound>sound\snd_spawn</sound>
+    <sound>sound\snd_power_up_speed</sound>
+    <sound>sound\snd_power_up_score</sound>
+    <sound>sound\snd_power_up_life</sound>
+    <sound>sound\snd_mario_sinks</sound>
+    <sound>sound\snd_mario_falls</sound>
+    <sound>sound\snd_boo</sound>
+    <sound>sound\snd_game_over</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_man_falling</sprite>
@@ -32,10 +40,11 @@
     <sprite>sprites\spr_boat_2</sprite>
     <sprite>sprites\spr_miss_2</sprite>
     <sprite>sprites\spr_man_sinking_2</sprite>
-    <sprite>sprites\spr_lifesaver_left_2</sprite>
+    <sprite>sprites\spr_lifesaver_left_23</sprite>
     <sprite>sprites\spr_lifesaver_right_2</sprite>
+    <sprite>sprites\spr_lifesaver_left_2</sprite>
     <sprite>sprites\spr_man_falling_3</sprite>
-    <sprite>sprites\spr_power_up</sprite>
+    <sprite>sprites\spr_power_up_score</sprite>
     <sprite>sprites\spr_mario_boat_1</sprite>
     <sprite>sprites\spr_mario_boat_2</sprite>
     <sprite>sprites\spr_mario_boat_3</sprite>
@@ -43,10 +52,13 @@
     <sprite>sprites\spr_mario_safe_right</sprite>
     <sprite>sprites\spr_mario_safe_left</sprite>
     <sprite>sprites\spr_power_up_life</sprite>
+    <sprite>sprites\spr_power_up_speed</sprite>
+    <sprite>sprites\spr_mario_over</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background</background>
     <background>background\backgroundv2</background>
+    <background>background\background_game_over</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -54,6 +66,8 @@
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_score</font>
+    <font>fonts\fnt_large</font>
+    <font>fonts\fnt_small</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_boat</object>
@@ -72,12 +86,15 @@
     <object>objects\obj_miss</object>
     <object>objects\obj_points</object>
     <object>objects\obj_shark</object>
-    <object>objects\obj_power_up</object>
+    <object>objects\obj_power_up_score</object>
     <object>objects\obj_power_up_life</object>
+    <object>objects\obj_power_up_speed</object>
+    <object>objects\obj_game_over</object>
+    <object>objects\obj_mario_over</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_game</room>
-    <room>rooms\room1</room>
+    <room>rooms\rm_game_over</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

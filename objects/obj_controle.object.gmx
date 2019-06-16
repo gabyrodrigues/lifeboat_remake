@@ -120,7 +120,7 @@ alarm[0] = -1;
           <argument>
             <kind>1</kind>
             <string>///spawner man_falling
-if global.pause == false{
+if global.pause == false {
     if spawn == "on"{
         var man_count = instance_number(obj_man_falling);
                 
@@ -129,33 +129,22 @@ if global.pause == false{
                 exit;
             }
             
-            /*if spawn_spr &lt;=3 {
+            spawn_spr = irandom_range(1,15);
+            if (global.points &gt;= 5 and spawn_spr &gt;= 5 and spawn_spr &lt;= 7) {
+                instance_create(0, 0, obj_power_up_score);
+            
+            } else if (global.chances &gt;= 1 and spawn_spr &gt;= 8 and spawn_spr &lt;= 12) {
+                instance_create(0, 0, obj_power_up_life);   
+            } else if (spawn_spr &gt;= 13 and spawn_spr &lt;= 15) {
+                instance_create(0, 0, obj_power_up_speed);   
+            } else if(spawn_spr &gt;= 1 and spawn_spr &lt;=3) {
                 instance_create(0, 0, obj_man_falling);
                 obj_man_falling.sprite_index = spr_man_falling_2;
-            }else{
+              
+            }else {
                 instance_create(0, 0, obj_man_falling);
                 obj_man_falling.sprite_index = spr_man_falling_3;
-            }
-            spawn = "off";
-            alarm[0] = 180;*/
-            
-            //spawn_spr = irandom_range(1,5);
-            //sprite = choose(obj_man_falling, obj_power_up);
-            //instance_create(0, 0, sprite);
-
-            //show_debug_message(spawn_spr);
-            //spawn = "off";
-            //alarm[0] = 180;
-            
-            spawn_spr = irandom_range(1,15);
-            if (global.points &gt;= 5 and spawn_spr &gt;= 14) {
-                instance_create(0, 0, obj_power_up);
-            
-            }else if (global.points &gt;= 5 and global.chances &gt;= 1 and spawn_spr == 13) {
-                instance_create(0, 0, obj_power_up_life);   
-            }
-            else {
-                instance_create(0, 0, obj_man_falling);
+              
             }
             
             spawn = "off";
@@ -163,13 +152,14 @@ if global.pause == false{
             
             
             show_debug_message(spawn_spr);
-            show_debug_message(global.chances);
+            //show_debug_message(global.chances);
+             show_debug_message(global.incremento);
         }
     }
     //som
     if (instance_exists(obj_man_falling) &amp;&amp; alarm[1] == -1){
-        audio_play_sound(snd_move4, 0, false);
-        alarm[1] =  room_speed - 1.5;
+        audio_play_sound(snd_spawn, 0, false);
+        alarm[1] =  45;
     }
 }
 </string>
