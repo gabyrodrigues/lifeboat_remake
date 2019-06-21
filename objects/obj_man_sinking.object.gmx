@@ -45,6 +45,8 @@ y = pos_Y;
 //image_index = atual_X;
 
 alarm[0] = -1;
+
+troca_sprite = "on";
 </string>
           </argument>
         </arguments>
@@ -96,22 +98,29 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if image_index &gt;= 4 {
+            <string>//quando terminar de percorrer: fim da pausa ou fim de jogo
+/*if image_index &gt;= 4 {
     if alarm[0] == -1{
         alarm[0] = room_speed;
         audio_play_sound(snd_mario_sinks, 10, false);
     }
-}
+}*/
 
 //quando o tubarão encontra a pessoa e começa a perseguição
-if (int64(obj_shark.x) &gt; x - 65) {
-    x += 0.8;
-    obj_shark.velocidade = 0.8;
+if (int64(obj_shark.x) &gt; x - 70) {
+    x += 1.2;
+    image_speed = 0.03;  
+    obj_shark.velocidade = 1.2;
 }
 
 //quando a pessoa chega na margem a instância é destruída e o jogo é despausado
 if(x &gt;= 756){ 
-    image_index = 5;
+    if alarm[0] == -1{
+        alarm[0] = room_speed;
+        audio_play_sound(snd_mario_sinks, 10, false);
+    }
+    image_speed = 0.05;
+    sprite_index = spr_sink;
     //instance_destroy();
     global.pause = false;
 }

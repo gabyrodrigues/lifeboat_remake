@@ -28,16 +28,21 @@
             <string>///variáveis globais de controle
 
 global.game = 1;
+
 alarm[0] = -1;
+
 spawn = "on";
+
 global.pause = false; //caso esteja ativo, o jogo é pausado para a animação de perda de vida acontecer
 global.tem_gente = false; //checa se tem gente na ilha, caso negativo, resgata mais outro passageiro que estava no barco
 global.game_over = false; //caso ativo, o jogo acaba
 global.pontos_ganhos = 1; //determina os pontos ganhos, começa com 1 mas caso a função bônus esteja ativada ele passa a ser 2
+global.pontos_ganhos_2 = 2;
 
 alarm[1] = -1;
 
 global.points = 0; //controla a pontuação
+global.points_2 = 0; //controla a pontuação
 
 global.pontos_bonus = 0;
 global.chances = 0; //controla as chances
@@ -119,7 +124,7 @@ alarm[0] = -1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///spawner man_falling
+            <string>///spawner
 if global.pause == false {
     if spawn == "on"{
         var man_count = instance_number(obj_man_falling);
@@ -129,22 +134,18 @@ if global.pause == false {
                 exit;
             }
             
-            spawn_spr = irandom_range(1,15);
-            if (global.points &gt;= 5 and spawn_spr &gt;= 5 and spawn_spr &lt;= 7) {
+            spawn_spr = irandom_range(1, 30);
+            if (global.points &gt;= 5 and spawn_spr &gt;= 1 and spawn_spr &lt;= 3) {
                 instance_create(0, 0, obj_power_up_score);
             
-            } else if (global.chances &gt;= 1 and spawn_spr &gt;= 8 and spawn_spr &lt;= 12) {
+            } else if (global.chances &gt;= 1 and spawn_spr &gt;= 3 and spawn_spr &lt;= 5) {
                 instance_create(0, 0, obj_power_up_life);   
-            } else if (spawn_spr &gt;= 13 and spawn_spr &lt;= 15) {
+            } else if (global.points &gt;= 5 and spawn_spr &gt;= 6 and spawn_spr &lt;= 9) {
                 instance_create(0, 0, obj_power_up_speed);   
-            } else if(spawn_spr &gt;= 1 and spawn_spr &lt;=3) {
-                instance_create(0, 0, obj_man_falling);
-                obj_man_falling.sprite_index = spr_man_falling_2;
-              
+            } else if(spawn_spr &gt;= 10 and spawn_spr &lt;= 14) {
+                instance_create(0, 0, obj_man_falling_2);
             }else {
                 instance_create(0, 0, obj_man_falling);
-                obj_man_falling.sprite_index = spr_man_falling_3;
-              
             }
             
             spawn = "off";
@@ -152,12 +153,16 @@ if global.pause == false {
             
             
             show_debug_message(spawn_spr);
-            //show_debug_message(global.chances);
-             show_debug_message(global.incremento);
         }
     }
     //som
     if (instance_exists(obj_man_falling) &amp;&amp; alarm[1] == -1){
+        audio_play_sound(snd_spawn, 0, false);
+        alarm[1] =  45;
+    }
+    
+    //som 2
+    if (instance_exists(obj_man_falling_2) &amp;&amp; alarm[1] == -1){
         audio_play_sound(snd_spawn, 0, false);
         alarm[1] =  45;
     }
@@ -214,7 +219,7 @@ if tecla_F{
             <string>///desenha a pontuação
 draw_set_colour(c_white);
 draw_set_font(fnt_score);
-draw_text(125,40,global.points + global.pontos_bonus);
+draw_text(125,40,global.points + global.pontos_bonus + global.points_2);
 </string>
           </argument>
         </arguments>

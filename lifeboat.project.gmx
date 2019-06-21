@@ -40,6 +40,7 @@
     <sprite>sprites\spr_boat_2</sprite>
     <sprite>sprites\spr_miss_2</sprite>
     <sprite>sprites\spr_man_sinking_2</sprite>
+    <sprite>sprites\spr_sink</sprite>
     <sprite>sprites\spr_lifesaver_left_23</sprite>
     <sprite>sprites\spr_lifesaver_right_2</sprite>
     <sprite>sprites\spr_lifesaver_left_2</sprite>
@@ -80,6 +81,7 @@
     <object>objects\obj_lifesaver_left</object>
     <object>objects\obj_lifesaver_right</object>
     <object>objects\obj_man_falling</object>
+    <object>objects\obj_man_falling_2</object>
     <object>objects\obj_man_safe_left</object>
     <object>objects\obj_man_safe_right</object>
     <object>objects\obj_man_sinking</object>
